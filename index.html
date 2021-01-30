@@ -32,7 +32,7 @@
 
         <div class="booking-content">
             <h1>Mega City Bus</h1>
-            <p style="color:#999966">Megabus is a long distance coach (Intercity bus service) operator operated by the Stagecoach Group. It commenced operating in August 2003, initially in the United Kingdom, and later expanding into continental Europe. Some services link with Megatrain services, also operated by Stagecoach. Fares use a yield management model, formerly starting at £1. In June 2016, Stagecoach Group sold all operations in the European mainland, as well as those services linking London with Europe, to German competitor Flixbus. Megabus serves as a contractor, so the sale resulted in no route changes for passengers.[1][2] Domestic UK operations remain under the control of Stagecoach.</p>
+            <p style="color: #ff9933">Megabus is a long distance coach (Intercity bus service) operator operated by the Stagecoach Group. It commenced operating in August 2003, initially in the United Kingdom, and later expanding into continental Europe. Some services link with Megatrain services, also operated by Stagecoach. Fares use a yield management model, formerly starting at £1. In June 2016, Stagecoach Group sold all operations in the European mainland, as well as those services linking London with Europe, to German competitor Flixbus.</p>
         </div>
 
 
@@ -67,8 +67,8 @@
                     <input id="firstCls-count" class="inp-style inp-width" type="number" name="" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <button id="firstCls-increase" class="button">+</button>
-                    <button id="firstCls-decrease" class="button" style="font-weight: 900;">-</button>
+                    <button onclick="firstClass(true)" class="button">+</button>
+                    <button onclick="firstClass(false)" class="button" style="font-weight: 900;">-</button>
                 </div>
             </div>
                 <div class="input-group f-class">
@@ -77,9 +77,8 @@
                         <input id="economyCls-count" class="inp-style inp-width" type="number" name="" value="0">
                     </div>
                     <div class="plus-minus-btn">
-                        <button  id="economic-increase" class=" button">+</button>
-                        <button 
-                        id="economic-decrease" class="button" style="font-weight: 900;"> - </button>
+                        <button onclick="economic  (true)"  class=" button">+</button> 
+                        <button  onclick="economic (false)" class="button" style="font-weight: 900;"> - </button>
                     </div>
                 </div>
 
@@ -120,20 +119,12 @@
             <div class="greating">
                 <h1 style="font-size: 50px; ">Congratulations!</h1>
                 <h4 style="font-size:30px;">Your Booking is complete.</h4>
-                
              </div>   
             </section>
 
              <!--JavaScript Section-->
     <script>
-                                 // first Class  section
-         document.getElementById('firstCls-increase').addEventListener('click', function(){
-                      firstClass(true)
-            })
-
-            document.getElementById('firstCls-decrease').addEventListener('click', function(){
-                firstClass(false)
-            })
+                                 // first Class  section                     
             function firstClass (isIncrease){
                 const fstClsTicketInput = document.getElementById("firstCls-count");
                 const fstClsTicketCount = parseInt(fstClsTicketInput.value);
@@ -145,22 +136,14 @@
                         fstClsNewCount = fstClsTicketCount - 1;
                 }
                fstClsTicketInput.value = fstClsNewCount;
-            //    const fstClsCostTotal  = fstClsNewCount * 150;
                calculateTotal()
             }
 
                                     // Economic Section
-        document.getElementById("economic-increase").addEventListener('click', function(){
-            economic  (true)
-        })
-        document.getElementById('economic-decrease').addEventListener('click', function(){
-            economic (false)
-        })
-        
             function economic (isIncrease){
                 const economyTicketInput = document.getElementById("economyCls-count")
-            const economyTicketCount = parseInt(economyTicketInput.value);
-            let economyNewCount = economyTicketCount
+                const economyTicketCount = parseInt(economyTicketInput.value);
+                let economyNewCount = economyTicketCount
                 if(isIncrease == true){
                     economyNewCount = economyTicketCount+1;
                 }
@@ -168,7 +151,6 @@
                     economyNewCount = economyTicketCount - 1;
                 }
                 economyTicketInput.value = economyNewCount;
-                // const economicCostTotal =  economyNewCount * 100;
                 calculateTotal()
             }
                                 // Total Section
@@ -195,8 +177,9 @@
                
                 const confirmArea = document.getElementById("confirm-area")
                 confirmArea.style.display = "block"
-             
+
             })
+            
     </script>
 </body>
 </html>
