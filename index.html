@@ -63,20 +63,20 @@
                 <div class="input-group f-class">
                 <div>
                     <label for="">First Class ($150)</label>
-                    <input id="fstCls-count"class="inp-style inp-width" type="number" name="" value="0">
+                    <input id="firstCls-count" class="inp-style inp-width" type="number" name="" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <button id=" fstCls-increase" class="button">+</button>
-                    <button id=" fstCls-decrease" class="button" style="font-weight: 900;">-</button>
+                    <button id="firstCls-increase" class="button">+</button>
+                    <button id="firstCls-decrease" class="button" style="font-weight: 900;">-</button>
                 </div>
             </div>
                 <div class="input-group f-class">
                     <div>
-                        <label for="" id="tacket-price">Economy ($100)</label>
+                        <label for="">Economy ($100)</label>
                         <input id="economyCls-count" class="inp-style inp-width" type="number" name="" value="0">
                     </div>
                     <div class="plus-minus-btn">
-                        <button  id="economic-increase" //onclick= "ticketCounter ('economy',true)" class=" button">+</button>
+                        <button  id="economic-increase" class=" button">+</button>
                         <button 
                         id="economic-decrease" class="button" style="font-weight: 900;"> - </button>
                     </div>
@@ -150,7 +150,7 @@
     //     })
 
 
-        document.getElementById('economic-increase').addEventListener('click', function(){
+        document.getElementById("economic-increase").addEventListener('click', function(){
             economic  (true)
         })
         document.getElementById('economic-decrease').addEventListener('click', function(){
@@ -171,26 +171,34 @@
                 const costTotal =  economyNewCount * 100;
             }
 
-            document.getElementById('fstCls-increase').addEventListener('click', function(){
-                firstClass (true)
-            })
+            // document.getElementById('fstCls-increase').addEventListener('click', function(){
+            //     firstClass (true)
+            // })
            
 
-            function firstClass (isIncrease){
-                const firstClassTicketInput  = document.getElementById("fstCls-count")
-                const firstClassTicketCount = parseInt(firstClassTicketInput.value);
-                let firstClassNewCount = firstClassTicketCount
-                if(isIncrease ==  true){
-                    firstClassNewCount = firstClassTicketCount + 1
-                }
-                if(isIncrease ==  false){
-                    firstClassNewCount = firstClassTicketCount - 1 && firstClassTicketCount > 0;
-                }
-                firstClassTicketInput.value = firstClassNewCount
-                const  costTotal = firstClassNewCount * 150
+            // function firstClass (isIncrease){
+            //     const firstClassTicketInput  = document.getElementById("fstCls-count")
+            //     const firstClassTicketCount = parseInt(firstClassTicketInput.value);
+            //     let firstClassNewCount = firstClassTicketCount
+            //     if(isIncrease ==  true){
+            //         firstClassNewCount = firstClassTicketCount + 1
+            //     }
+            //     if(isIncrease ==  false){
+            //         firstClassNewCount = firstClassTicketCount - 1 && firstClassTicketCount > 0;
+            //     }
+            //     firstClassTicketInput.value = firstClassNewCount
+            //     const  costTotal = firstClassNewCount * 150
 
 
-            }
+            // }
+
+            document.getElementById('firstCls-increase').addEventListener('click', function(){
+                console.log("click me")
+            })
+
+            document.getElementById('firstCls-decrease').addEventListener('click', function(){
+                console.log("with you")
+            })
 
     </script>
 </body>
