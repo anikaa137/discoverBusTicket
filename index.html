@@ -164,7 +164,7 @@
                 if(isIncrease == true){
                     economyNewCount = economyTicketCount+1;
                 }
-                if(isIncrease == false){
+                if(isIncrease == false && economyTicketCount > 0){
                     economyNewCount = economyTicketCount - 1;
                 }
                 economyTicketInput.value = economyNewCount;
@@ -184,7 +184,7 @@
                     firstClassNewCount = firstClassTicketCount + 1
                 }
                 if(isIncrease ==  false){
-                    firstClassNewCount = firstClassTicketCount - 1
+                    firstClassNewCount = firstClassTicketCount - 1 && firstClassTicketCount > 0;
                 }
                 firstClassTicketInput.value = firstClassNewCount
                 const  costTotal = firstClassNewCount * 150
