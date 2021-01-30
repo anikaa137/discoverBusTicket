@@ -112,9 +112,7 @@ nav ul li a:hover, a.active{
    margin-top: 20px;
    margin-right: 5px;
    background-color:#52af3a;
-   
 }
-
 .btn-style{
     display: block;
     width: 100%;
@@ -126,7 +124,6 @@ nav ul li a:hover, a.active{
     font-weight: 700;
     background-color:  #52AF3A;
 }
-
 .amount{
     display: flex;
     justify-content: space-between;
