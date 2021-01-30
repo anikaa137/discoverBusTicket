@@ -9,10 +9,11 @@ body{
     font-family: 'Roboto', sans-serif;
     background:url("images/bus.png");
     background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: scroll;
-    background-size: cover;
+    background-position:center center;
+    background-attachment:scroll;
+    background-size:cover;
 }
+
 nav{
     height: 50px;
     width: 100%;
@@ -128,4 +129,24 @@ nav ul li a:hover, a.active{
 .amount{
     display: flex;
     justify-content: space-between;
+}
+#confirm-area {
+    display: none;
+   background-color: white;
+   padding: 15%;
+   background: url("images/bus.png");
+   background-repeat: no-repeat;
+   background-position:center ;
+   background-attachment:scroll;
+   background-size:cover;
+}
+.greating{
+    margin-left:70%;
+    background-color:whitesmoke;
+    color:rgb(44, 155, 44);
+    width: 410px;
+    padding: 10px;
+    border-radius: 3px;
+
+   
 }

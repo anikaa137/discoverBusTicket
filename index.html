@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+ <body >
+     <div id= "booking-area" >
     <!--Header and Menu Section-->
     <header class="container">
         <nav>
@@ -27,11 +28,11 @@
     </header>
 
     <!--Booking Section-->
-    <main class="main-content container">
+    <main  class="main-content container">
 
         <div class="booking-content">
             <h1>Mega City Bus</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <p style="color:#999966">Megabus is a long distance coach (Intercity bus service) operator operated by the Stagecoach Group. It commenced operating in August 2003, initially in the United Kingdom, and later expanding into continental Europe. Some services link with Megatrain services, also operated by Stagecoach. Fares use a yield management model, formerly starting at £1. In June 2016, Stagecoach Group sold all operations in the European mainland, as well as those services linking London with Europe, to German competitor Flixbus. Megabus serves as a contractor, so the sale resulted in no route changes for passengers.[1][2] Domestic UK operations remain under the control of Stagecoach.</p>
         </div>
 
 
@@ -89,7 +90,7 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p id="subtotal"> $500</p>
+                        <p id="subtotal"> $000</p>
                     </div>
                 </div>
 
@@ -98,7 +99,7 @@
                         <p >Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p id="vat">$50</p>
+                        <p id="vat">$00</p>
                     </div>
                 </div>
                 <hr>
@@ -107,19 +108,25 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p id="totalPrice">$550</p>
+                        <p id="totalPrice">$000</p>
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button  id="booking" class="btn-style">Book Now</button>
         </div>
     </main>
+</div>
+        <section id="confirm-area"> 
+            <div class="greating">
+                <h1 style="font-size: 50px; ">Congratulations!</h1>
+                <h4 style="font-size:30px;">Your Booking is complete.</h4>
+                
+             </div>   
+            </section>
 
-    <!--Thank You-->
-
-    <!--JavaScript Section-->
+             <!--JavaScript Section-->
     <script>
-         
+                                 // first Class  section
          document.getElementById('firstCls-increase').addEventListener('click', function(){
                       firstClass(true)
             })
@@ -142,9 +149,7 @@
                calculateTotal()
             }
 
-
-
-
+                                    // Economic Section
         document.getElementById("economic-increase").addEventListener('click', function(){
             economic  (true)
         })
@@ -166,7 +171,7 @@
                 // const economicCostTotal =  economyNewCount * 100;
                 calculateTotal()
             }
-
+                                // Total Section
             function calculateTotal(){
                 const fstClsTicketInput = document.getElementById("firstCls-count");
                 const fstClsTicketCount = parseInt(fstClsTicketInput.value);
@@ -182,14 +187,17 @@
 
                 const totalPrice = subTotal + vatCost
                  document.getElementById("totalPrice").innerText = "$" + totalPrice
-
-
-
-
-                 
             }
-            
+                                // Bonus Part 
+             document.getElementById("booking").addEventListener('click', function(){
+                const bookingArea = document.getElementById("booking-area");
+                bookingArea.style.display = "none";
+               
+                const confirmArea = document.getElementById("confirm-area")
+                confirmArea.style.display = "block"
+             
+            })
     </script>
 </body>
-
 </html>
+                                        <!--Thank You-->
