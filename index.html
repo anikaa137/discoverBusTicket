@@ -193,13 +193,26 @@
             // }
 
             document.getElementById('firstCls-increase').addEventListener('click', function(){
-                console.log("click me")
+                      firstClass(true)
             })
 
             document.getElementById('firstCls-decrease').addEventListener('click', function(){
-                console.log("with you")
+                firstClass(false)
             })
+            function firstClass (isIncrease){
+                const fstClsTicketInput = document.getElementById("firstCls-count");
+                const fstClsTicketCount = parseInt(fstClsTicketInput.value);
+                let fstClsNewCount =  fstClsTicketCount;
+                if( isIncrease == true){
+                    fstClsNewCount  = fstClsTicketCount + 1;
+                }
+                if(isIncrease ==  false && fstClsTicketCount > 0){
+                        fstClsNewCount = fstClsTicketCount - 1;
+                }
+               fstClsTicketInput.value = fstClsNewCount
+            }
 
+            
     </script>
 </body>
 
