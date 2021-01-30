@@ -89,16 +89,16 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p>$500</p>
+                        <p id="subtotal"> $500</p>
                     </div>
                 </div>
 
                 <div class="amount">
                     <div class="left">
-                        <p>Charge 10% VAT</p>
+                        <p >Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p>$50</p>
+                        <p id="vat">$50</p>
                     </div>
                 </div>
                 <hr>
@@ -107,7 +107,7 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p>$550</p>
+                        <p id="totalPrice">$550</p>
                     </div>
                 </div>
             </div>
@@ -120,34 +120,29 @@
     <!--JavaScript Section-->
     <script>
          
-        //  function ticketCounter (tickets,isIncrease){
-            
-        //      const ticketInput = document.getElementById(tickets + "-count");
-        //      const ticketCount = parseInt(ticketInput.value);
-        //     const  ticketNewCount = ticketCount;
-        //         if(isIncrease == true){
-        //             let ticketNewCount  = ticketCount + 1;
-        //         }
-        //         if(isIncrease == false){
-        //             let ticketNewCount = ticketCount - 1 && ticketCount > 0
-        //         }
-        //         ticketInput.value =  ticketNewCount
-        //  }
+         document.getElementById('firstCls-increase').addEventListener('click', function(){
+                      firstClass(true)
+            })
 
-    //    document.getElementById('economic-increase').addEventListener('click',function(){
-    //         const economyTicketInput = document.getElementById("economyCls-count")
-    //         const economyTicketCount = parseInt(economyTicketInput.value);
-    //         const economyNewCount = economyTicketCount + 1
-    //         economyTicketInput.value = economyNewCount;
-    //         const costTotal =  economyNewCount * 100;
-    //     })
-    //     document.getElementById('economic-decrease').addEventListener('click',function(){
-    //         const economyTicketInput = document.getElementById("economyCls-count")
-    //         const economyTicketCount = parseInt(economyTicketInput.value);
-    //         const economyNewCount = economyTicketCount - 1
-    //         economyTicketInput.value = economyNewCount;
-    //         const costTotal =  economyNewCount * 100;
-    //     })
+            document.getElementById('firstCls-decrease').addEventListener('click', function(){
+                firstClass(false)
+            })
+            function firstClass (isIncrease){
+                const fstClsTicketInput = document.getElementById("firstCls-count");
+                const fstClsTicketCount = parseInt(fstClsTicketInput.value);
+                let fstClsNewCount =  fstClsTicketCount;
+                if( isIncrease == true){
+                    fstClsNewCount  = fstClsTicketCount + 1;
+                }
+                if(isIncrease ==  false && fstClsTicketCount > 0){
+                        fstClsNewCount = fstClsTicketCount - 1;
+                }
+               fstClsTicketInput.value = fstClsNewCount;
+            //    const fstClsCostTotal  = fstClsNewCount * 150;
+               calculateTotal()
+            }
+
+
 
 
         document.getElementById("economic-increase").addEventListener('click', function(){
@@ -168,50 +163,31 @@
                     economyNewCount = economyTicketCount - 1;
                 }
                 economyTicketInput.value = economyNewCount;
-                const costTotal =  economyNewCount * 100;
+                // const economicCostTotal =  economyNewCount * 100;
+                calculateTotal()
             }
 
-            // document.getElementById('fstCls-increase').addEventListener('click', function(){
-            //     firstClass (true)
-            // })
-           
-
-            // function firstClass (isIncrease){
-            //     const firstClassTicketInput  = document.getElementById("fstCls-count")
-            //     const firstClassTicketCount = parseInt(firstClassTicketInput.value);
-            //     let firstClassNewCount = firstClassTicketCount
-            //     if(isIncrease ==  true){
-            //         firstClassNewCount = firstClassTicketCount + 1
-            //     }
-            //     if(isIncrease ==  false){
-            //         firstClassNewCount = firstClassTicketCount - 1 && firstClassTicketCount > 0;
-            //     }
-            //     firstClassTicketInput.value = firstClassNewCount
-            //     const  costTotal = firstClassNewCount * 150
-
-
-            // }
-
-            document.getElementById('firstCls-increase').addEventListener('click', function(){
-                      firstClass(true)
-            })
-
-            document.getElementById('firstCls-decrease').addEventListener('click', function(){
-                firstClass(false)
-            })
-            function firstClass (isIncrease){
+            function calculateTotal(){
                 const fstClsTicketInput = document.getElementById("firstCls-count");
                 const fstClsTicketCount = parseInt(fstClsTicketInput.value);
-                let fstClsNewCount =  fstClsTicketCount;
-                if( isIncrease == true){
-                    fstClsNewCount  = fstClsTicketCount + 1;
-                }
-                if(isIncrease ==  false && fstClsTicketCount > 0){
-                        fstClsNewCount = fstClsTicketCount - 1;
-                }
-               fstClsTicketInput.value = fstClsNewCount
-            }
 
+                const economyTicketInput = document.getElementById("economyCls-count")
+                 const economyTicketCount = parseInt(economyTicketInput.value);
+
+                 const subTotal = fstClsTicketCount * 150 + economyTicketCount*100
+                 document.getElementById('subtotal').innerText = "$" + subTotal;
+
+                 const vatCost = (subTotal * 0.1)
+                 document.getElementById('vat').innerText  = "$" + vatCost;
+
+                const totalPrice = subTotal + vatCost
+                 document.getElementById("totalPrice").innerText = "$" + totalPrice
+
+
+
+
+                 
+            }
             
     </script>
 </body>
